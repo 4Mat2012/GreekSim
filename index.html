@@ -19,6 +19,13 @@
             --text-light: #6b7b95;
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --transition: all 0.4s ease;
+            
+            /* Dark Theme Variables */
+            --dark-bg: #0a0f1c;
+            --dark-card: #131a2d;
+            --dark-text: #e2e8f0;
+            --dark-text-light: #94a3b8;
+            --dark-border: #2d3748;
         }
 
         * {
@@ -37,6 +44,12 @@
             color: var(--text-dark);
             background-color: var(--white);
             overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        body.dark-theme {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
         }
 
         h1, h2, h3, h4, h5 {
@@ -44,6 +57,15 @@
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        body.dark-theme h1,
+        body.dark-theme h2,
+        body.dark-theme h3,
+        body.dark-theme h4,
+        body.dark-theme h5 {
+            color: var(--white);
         }
 
         .container {
@@ -55,6 +77,11 @@
 
         .section {
             padding: 100px 0;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .section {
+            background-color: var(--dark-bg);
         }
 
         .btn {
@@ -126,6 +153,37 @@
             max-width: 700px;
             margin: 0 auto;
             font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .section-title p {
+            color: var(--dark-text-light);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+            background: var(--accent-gold);
         }
 
         /* Animasyonlar */
@@ -162,6 +220,11 @@
             transition: var(--transition);
         }
 
+        body.dark-theme header {
+            background-color: rgba(10, 15, 28, 0.95);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -177,6 +240,11 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             position: relative;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .logo {
+            color: var(--white);
         }
 
         .logo:after {
@@ -187,6 +255,11 @@
             width: 100%;
             height: 3px;
             background: linear-gradient(to right, var(--primary-blue), var(--accent-gold));
+            transition: var(--transition);
+        }
+
+        body.dark-theme .logo:after {
+            background: linear-gradient(to right, var(--accent-gold), var(--white));
         }
 
         .nav-links {
@@ -201,6 +274,11 @@
             font-weight: 600;
             transition: var(--transition);
             position: relative;
+            color: var(--text-dark);
+        }
+
+        body.dark-theme .nav-links a {
+            color: var(--dark-text);
         }
 
         .nav-links a:after {
@@ -218,6 +296,10 @@
             color: var(--primary-blue);
         }
 
+        body.dark-theme .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
         .nav-links a:hover:after {
             width: 100%;
         }
@@ -227,6 +309,11 @@
             cursor: pointer;
             font-size: 1.5rem;
             color: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        body.dark-theme .hamburger {
+            color: var(--white);
         }
 
         /* Hero Section */
@@ -296,6 +383,11 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             position: relative;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .about-img {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .about-img:before {
@@ -327,15 +419,29 @@
             color: var(--primary-blue);
         }
 
+        body.dark-theme .about-text h3 {
+            color: var(--white);
+        }
+
         .about-text p {
             margin-bottom: 25px;
             color: var(--text-light);
             font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .about-text p {
+            color: var(--dark-text-light);
         }
 
         /* Features Section */
         .features {
             background-color: var(--light-bg);
+            transition: var(--transition);
+        }
+
+        body.dark-theme .features {
+            background-color: var(--dark-card);
         }
 
         .features-grid {
@@ -353,6 +459,12 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+        }
+
+        body.dark-theme .feature-card {
+            background-color: var(--dark-card);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--dark-border);
         }
 
         .feature-card:before {
@@ -382,6 +494,10 @@
             transition: var(--transition);
         }
 
+        body.dark-theme .feature-icon {
+            color: var(--accent-gold);
+        }
+
         .feature-card:hover .feature-icon {
             color: var(--accent-gold);
             transform: scale(1.1);
@@ -394,6 +510,11 @@
 
         .feature-card p {
             color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        body.dark-theme .feature-card p {
+            color: var(--dark-text-light);
         }
 
         /* Why Choose Section */
@@ -428,12 +549,22 @@
 
         .why-choose-text p {
             color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        body.dark-theme .why-choose-text p {
+            color: var(--dark-text-light);
         }
 
         .why-choose-img {
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        body.dark-theme .why-choose-img {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .why-choose-img img {
@@ -479,6 +610,12 @@
             background-color: var(--primary-blue);
             color: var(--white);
             padding: 80px 0 30px;
+            transition: var(--transition);
+        }
+
+        body.dark-theme footer {
+            background-color: var(--dark-card);
+            border-top: 1px solid var(--dark-border);
         }
 
         .footer-content {
@@ -509,6 +646,11 @@
         .footer-col p {
             margin-bottom: 20px;
             opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .footer-col p {
+            color: var(--dark-text-light);
         }
 
         .contact-info {
@@ -557,6 +699,11 @@
         .footer-links a {
             opacity: 0.8;
             transition: var(--transition);
+            color: var(--white);
+        }
+
+        body.dark-theme .footer-links a {
+            color: var(--dark-text-light);
         }
 
         .footer-links a:hover {
@@ -608,6 +755,10 @@
                 box-shadow: var(--shadow);
             }
 
+            body.dark-theme .nav-links {
+                background-color: var(--dark-card);
+            }
+
             .nav-links.active {
                 left: 0;
             }
@@ -639,6 +790,14 @@
             .logo {
                 font-size: 1.7rem;
             }
+
+            .theme-toggle {
+                top: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -655,6 +814,11 @@
     </style>
 </head>
 <body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -702,7 +866,9 @@
                     <p>Our mission is to expand our community and create a dynamic, interactive environment that represents the future of Greece in Roblox. Join us on this journey and become a part of something truly special!</p>
                     <a href="#features" class="btn">Our Features</a>
                 </div>
-                
+                <div class="about-img animate-on-scroll">
+                   
+                </div>
             </div>
         </div>
     </section>
@@ -776,7 +942,8 @@
                     <a href="https://discord.gg/Q6EqktTPRF" class="btn" target="_blank">Join Discord</a>
                 </div>
                 <div class="why-choose-img animate-on-scroll">
-                    
+                   
+                </div>
             </div>
         </div>
     </section>
@@ -790,8 +957,69 @@
         </div>
     </section>
 
-    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Greek Simulation</h3>
+                    <p>Bringing the rich history and culture of Greece to life on the Roblox platform.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>greeksimulation@email.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-discord"></i>
+                            <span>discord.gg/Q6EqktTPRF</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://discord.gg/Q6EqktTPRF" target="_blank"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#why-choose">Why Choose Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Greek Simulation. All rights reserved. Roblox is a registered trademark of Roblox Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-theme');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
         // Scroll animasyonu
         document.addEventListener('DOMContentLoaded', function() {
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -826,10 +1054,14 @@
             window.addEventListener('scroll', function() {
                 const header = document.querySelector('header');
                 if (window.scrollY > 100) {
-                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                    header.style.backgroundColor = document.body.classList.contains('dark-theme') 
+                        ? 'rgba(10, 15, 28, 0.98)' 
+                        : 'rgba(255, 255, 255, 0.98)';
                     header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
                 } else {
-                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    header.style.backgroundColor = document.body.classList.contains('dark-theme')
+                        ? 'rgba(10, 15, 28, 0.95)'
+                        : 'rgba(255, 255, 255, 0.95)';
                     header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
                 }
             });
